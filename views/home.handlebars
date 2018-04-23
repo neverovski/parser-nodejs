@@ -1,4 +1,17 @@
-<h1>{{{ H1 }}}</h1>
-<div>Old price: {{{ OldPrice }}}</div>
-<div>Price: {{{ Price }}}</div>
-<div><img src="{{{ Images }}}"></div>
+<div class="container pt-5">
+    <form>
+        <div class="form-group row">
+            <label for="url" class="col-2 col-form-label">Url eBay</label>
+            <div class="col-10">
+                <input class="form-control" type="url" placeholder="Enter url eBay" id="url" required>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success search">Submit</button>
+    </form>
+    <hr class="my-4">
+    <div>
+        <h1>H1: <small id="h1" class="text-muted"></small></h1>
+        <h3>Price: <small id="price" class="text-muted"></small></h3>
+        <img src="{{{ Images }}}" id="images" class="img-thumbnail">
+    </div>
+</div>
