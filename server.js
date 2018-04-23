@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const expressHandlebars = require('express-handlebars');
+const config = require('./config/config');
 
 const app = express();
 const routes = require('./routes');
@@ -23,7 +24,7 @@ app.use(bodyParser.urlencoded({
 app.use('/', routes);
 app.use('/ebay', routes);
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || config.port;
 app.listen(port, (err) => {
     if (err) {
         console.log('something bad happened', err);
