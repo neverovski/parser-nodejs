@@ -5,7 +5,8 @@ const parser = (url, callback) => {
     request(url, function (err, res, body) {
         const $ = cheerio.load(body);
 
-        const Price = $('#mm-saleDscPrc').text() ? $('#mm-saleDscPrc').text() : $('#prcIsum').text();
+        let Price = $('#mm-saleDscPrc').text() ? $('#mm-saleDscPrc').text() : $('#prcIsum').text();
+        Price = Price ? Price : $('#prcIsum_bidPrice').text();
         const parseInformation = {
             H1: $('#vi-lkhdr-itmTitl').text(),
             Price: Price,
