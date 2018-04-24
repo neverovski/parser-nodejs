@@ -17,6 +17,10 @@ $(document).ready(function () {
                 url: $('#url').val()
             }
         }).done(data => {
+            $('#images').html('');
+            $('#price').text('');
+            $('#h1').text('');
+
             $('.form-group').addClass('has-success');
             $('#url').addClass('form-control-success');
             $('#h1').text(data.H1);
@@ -24,6 +28,7 @@ $(document).ready(function () {
             data.Images.forEach(element => {
                 $('#images').append(`<img src="${element}" id="images" class="img-thumbnail">`)
             });
+            $('#description').html(data.Description);
         }).fail(() => {
             $('.form-group').addClass('has-danger');
             $('#url').addClass('form-control-danger');
