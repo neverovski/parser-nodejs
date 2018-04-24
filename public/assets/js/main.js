@@ -21,7 +21,9 @@ $(document).ready(function () {
             $('#url').addClass('form-control-success');
             $('#h1').text(data.H1);
             $('#price').text(data.Price);
-            $('#images').attr('src', data.Images);
+            data.Images.forEach(element => {
+                $('#images').append(`<img src="${element}" id="images" class="img-thumbnail">`)
+            });
         }).fail(() => {
             $('.form-group').addClass('has-danger');
             $('#url').addClass('form-control-danger');
