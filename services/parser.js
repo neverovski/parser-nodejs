@@ -11,9 +11,9 @@ const parser = (url, callback) => {
 
         $('#vi_main_img_fs_slider img').each(function(i, elem) {
             let img = $(this).attr('src');
-            images[i] = img.substr(0, img.length - 6) + '500.jpg';
+            images[i] = img.substr(0, img.length - 6) + '800.jpg';
         });
-
+        $('.itemAttr').find("a").remove();
         const parseInformation = {
             H1: $('#vi-lkhdr-itmTitl').text(),
             Price: Price,
